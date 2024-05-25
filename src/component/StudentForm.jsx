@@ -61,8 +61,8 @@ const StudentForm = () => {
   };
 
   return (
-    <div className="flex h-screen justify-center items-center bg-gradient-to-bl from-indigo-500 via-purple-500 to-pink-500 cursor-pointer">
-      <div className="bg-transparent border-white border p-8 rounded-lg shadow-2xl w-full max-w-md">
+    <div className="flex h-screen justify-center items-center bg-gradient-to-bl from-indigo-500 via-purple-500 to-pink-500 ">
+      <div className="bg-transparent border-white border p-8 rounded-lg shadow-2xl w-full max-w-md cursor-pointer">
         <h2 className="text-2xl font-bold mb-4 text-center text-gray-300">
           Add Student
         </h2>

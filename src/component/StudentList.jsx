@@ -41,7 +41,11 @@ const StudentList = () => {
 
       {loading ? (
         <div className='flex justify-center mt-4'>
-          <img src={loader} alt='loader' />
+          <div>
+          <img className='h-20 w-16'  src={loader} alt='loader' />
+
+          </div>
+         
         </div>
       ) : (
         <table className='min-w-full bg-white border border-gray-200'>

@@ -4,9 +4,11 @@ import axios from "axios";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false); 
 
   const handleLogin = async (event) => {
     event.preventDefault();
+    setLoading(true); 
     try {
       const response = await axios.post("/api/auth/login", {
         username,
@@ -16,8 +18,10 @@ const Login = () => {
       localStorage.setItem("token", response.data.token);
       window.location.href = "/students";
     } catch (error) {
-      alert("Login failed!");
+      alert("Please enter valid credentials");
       console.error("Login failed:", error);
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -48,9 +52,10 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+            disabled={loading} // Disable button when loading
+            className={`w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`} // Add styles for disabled state
           >
-            Login
+            {loading ? 'Logging in...' : 'Login'} {/* Change button text based on loading state */}
           </button>
         </form>
       </div>
