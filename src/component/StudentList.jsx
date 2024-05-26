@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import { VscLoading } from "react-icons/vsc";
 import loader from "../assets/loader.gif";
 
 const StudentList = () => {
@@ -29,11 +28,11 @@ const StudentList = () => {
   }, []);
 
   return (
-    <div className='p-4 cursor-pointer'>
-      <div className='flex justify-between mb-4'>
+    <div className='p-4 '>
+      <div className='flex justify-between mb-4 '>
         <h2 className='text-2xl font-bold'>Student List</h2>
         <Link to="/add-student">
-          <button className='bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300'>
+          <button className='bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 cursor-pointer'>
             Add Student
           </button>
         </Link>
@@ -48,7 +47,7 @@ const StudentList = () => {
          
         </div>
       ) : (
-        <table className='min-w-full bg-white border border-gray-200'>
+        <table className='min-w-full bg-white border border-gray-200 cursor-pointer'>
           <thead className='bg-blue-400'>
             <tr>
               <th className='py-2 px-4 border-b'>ID</th>
