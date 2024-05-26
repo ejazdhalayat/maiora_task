@@ -28,7 +28,7 @@ const StudentList = () => {
   }, []);
 
   return (
-    <div className='p-4 '>
+    <div className='p-4 bg-gray-200 h-screen '>
       <div className='flex justify-between mb-4 '>
         <h2 className='text-2xl font-bold'>Student List</h2>
         <Link to="/add-student">
